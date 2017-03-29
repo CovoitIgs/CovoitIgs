@@ -2,6 +2,41 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
+## Git
+
+Créér une branche par feature :
+
+```bash
+git fetch
+git checkout dev
+git checkout -b my-feature
+```
+
+Push sur sa branch feature :
+
+```bash
+git add -A
+git commit
+git push -u origin my-feature // le -u est à mettre lors du premier push, après un git push suffira
+```
+
+Pour envoyer sa branche feature sur la dev :
+
+```bash
+git rebase dev
+git checkout dev
+git merge my-feature
+```
+
+## Visual Studio Code
+
+Installer les extensions :
+
+* Typescript
+* Editorconfig
+* ESLint
+* TSLint
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
