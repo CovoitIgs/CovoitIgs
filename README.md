@@ -4,6 +4,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Git
 
+Récupérer le repo :
+
+```bash
+git clone https://github.com/CovoitIgs/CovoitIgs.git
+```
+
 Créér une branche par feature :
 
 ```bash
