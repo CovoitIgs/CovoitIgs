@@ -7,8 +7,7 @@ $paddingBloc: 50px;
 #homeHead{
     padding: $paddingBloc;
     background-image: url("../../assets/images/toulouse.jpg");
-
-    color: white;
+    margin-top:  -40px;
     .grid{
         display: table;
         position: relative;
