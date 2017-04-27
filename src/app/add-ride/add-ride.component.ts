@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-add-ride',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-ride.component.scss']
 })
 export class AddRideComponent implements OnInit {
+    private lat = 0
+    private lng = 0
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+    ngOnInit() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                this.lat = position.coords.latitude
+                this.lng = position.coords.longitude
+            })
+        }
+    }
 }

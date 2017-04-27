@@ -10,9 +10,11 @@ import { HomeComponent } from './home/home.component'
 import { AppHeaderComponent } from './app-header/app-header.component'
 import { AppFooterComponent } from './app-footer/app-footer.component'
 import { UserService } from './services/user.service'
-import { AuthenticationService } from './services/authentication.service';
-import { ConnectionComponent } from './connection/connection.component';
-import { AddRideComponent } from './add-ride/add-ride.component';
+import { AuthenticationService } from './services/authentication.service'
+import { ConnectionComponent } from './connection/connection.component'
+import { AddRideComponent } from './add-ride/add-ride.component'
+
+import { AgmCoreModule } from 'angular2-google-maps/core'
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { AddRideComponent } from './add-ride/add-ride.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot( routes )
+    RouterModule.forRoot( routes ),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA0vEGP54d4aem21xq9fy4wmUw9uHoYQLI'
+    })
   ],
   providers: [
       UserService,
