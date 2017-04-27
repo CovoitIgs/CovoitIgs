@@ -11,13 +11,17 @@ import { AppHeaderComponent } from './app-header/app-header.component'
 import { AppFooterComponent } from './app-footer/app-footer.component'
 import { UserService } from './services/user.service'
 import { AuthenticationService } from './services/authentication.service';
+import { ConnectionComponent } from './connection/connection.component';
+import { AddRideComponent } from './add-ride/add-ride.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AppHeaderComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    ConnectionComponent,
+    AddRideComponent
   ],
   imports: [
     BrowserModule,
