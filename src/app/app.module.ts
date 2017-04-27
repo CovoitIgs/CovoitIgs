@@ -8,15 +8,16 @@ import routes from './app-routing.module'
 import { AppComponent } from './app.component'
 import { HomeComponent } from './home/home.component'
 import { AppHeaderComponent } from './app-header/app-header.component'
-
+import { AppFooterComponent } from './app-footer/app-footer.component'
 import { UserService } from './services/user.service'
-import { AuthenticationService } from './services/authentication.service'
+import { AuthenticationService } from './services/authentication.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    AppFooterComponent
   ],
   imports: [
     BrowserModule,

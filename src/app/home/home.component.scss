@@ -1,0 +1,48 @@
+$colorService: rgba(52, 152, 219,0.8);
+$colorContact: rgba(52, 73, 94,1.0);
+$paddingBloc: 50px;
+
+#homeHead{
+    padding: $paddingBloc;
+    background-image: url("../../assets/images/toulouse.jpg");
+
+    color: white;
+    .grid{
+        display: table;
+        position: relative;
+        vertical-align: middle;
+        width: 100%;
+        min-height: 700px;
+        .sixteen{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            h1 {
+                font-size: 4.5em;
+            }
+            h3{
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+#slogan{
+    padding: $paddingBloc;
+}
+
+#service{
+    background-color: $colorService;
+    padding: $paddingBloc;
+}
+
+#contact{
+    background-color: $colorContact;
+    padding: $paddingBloc;
+
+    .button{
+        margin:auto;
+    }
+}
+
+
