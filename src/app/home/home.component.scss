@@ -1,5 +1,6 @@
-$colorService: rgba(52, 152, 219,0.8);
-$colorContact: rgba(52, 73, 94,1.0);
+$colorService: #607D8B;
+$colorContact: #455A64;
+$fontColorIcon: #00796B;
 $colorH2WithBackground: White;
 $paddingBloc: 50px;
 
@@ -13,7 +14,7 @@ $paddingBloc: 50px;
         position: relative;
         vertical-align: middle;
         width: 100%;
-        min-height: 700px;
+        height: 450px;
         .sixteen{
             display: table-cell;
             vertical-align: middle;
@@ -38,19 +39,14 @@ $paddingBloc: 50px;
     }
     background-color: $colorService;
     padding: $paddingBloc;
+    i{
+        background-color: $fontColorIcon !important;
+    }
 }
 
 #contact{
     background-color: $colorContact;
     padding: $paddingBloc;
-        h2{
-            color:$colorH2WithBackground;
-        }
-
-    .button{
-        margin:auto;
-    }
-
 }
 
 

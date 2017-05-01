@@ -14,7 +14,8 @@ import { AuthenticationService } from './services/authentication.service'
 import { ConnectionComponent } from './connection/connection.component'
 import { AddRideComponent } from './add-ride/add-ride.component'
 
-import { AgmCoreModule } from 'angular2-google-maps/core'
+import { AgmCoreModule } from 'angular2-google-maps/core';
+import { ContactComponent } from './contact/contact.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core'
     AppHeaderComponent,
     AppFooterComponent,
     ConnectionComponent,
-    AddRideComponent
+    AddRideComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
