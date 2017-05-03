@@ -5,26 +5,35 @@
     <div class="three column row">
         <div class="column">
             <form class="ui form">
-                <div class="field">
-                    <input type="text" name="start" placeholder="Adresse de départ">
+                <div class="field" [ngClass]="{ 'error': errorDeparture }">
+                    <input type="text" name="departure" placeholder="Adresse de départ" [(ngModel)]="departure">
+                </div>
+                <div *ngIf="errorDeparture" class="ui red message">
+                    Adresse de départ invalide
+                </div>
+                <div class="field" [ngClass]="{ 'error': errorDepartureTime }">
+                    <input type="text" name="departureTime" placeholder="Heure de départ" [(ngModel)]="departureTime">
+                </div>
+                <div *ngIf="errorDepartureTime" class="ui red message">
+                    Heure de départ invalide
+                </div>
+                <div class="field" [ngClass]="{ 'error': errorArrival }">
+                    <input type="text" name="arrival" placeholder="Adresse d'arrivée" [(ngModel)]="arrival">
+                </div>
+                <div *ngIf="errorArrival" class="ui red message">
+                    Adresse d'arriver invalide
+                </div>
+                <div class="field" [ngClass]="{ 'error': errorArrivalTime }">
+                    <input type="text" name="arrivalTime" placeholder="Heure de d'arrivée" [(ngModel)]="arrivalTime">
+                </div>
+                <div *ngIf="errorArrivalTime" class="ui red message">
+                    Heure d'arriver invalide
                 </div>
                 <div class="field">
-                    <input type="time" name="startHour" placeholder="Heure de départ">
+                    <input type="text" name="detour" placeholder="Détour possible (mètres)" [(ngModel)]="detour">
                 </div>
                 <div class="field">
-                    <input type="text" name="finish" placeholder="Adresse d'arrivée">
-                </div>
-                <div class="field">
-                    <input type="time" name="finishtHour" placeholder="Heure de d'arrivée">
-                </div>
-                <div class="field">
-                    <input type="date" name="date" placeholder="Date">
-                </div>
-                <div class="field">
-                    <input type="text" name="detour" placeholder="Détour possible (mètres)">
-                </div>
-                <div class="field">
-                    <select class="ui search dropdown">
+                    <select class="ui search dropdown" name="recurrence" [(ngModel)]="recurrence">
                         <option value="">Récurrence</option>
                         <option value="week">Tous les jours de la semaine</option>
                         <option value="monday">Tous les lundi</option>
@@ -35,7 +44,7 @@
                     </select>
                 </div>
                 <div class="field">
-                    <select class="ui search dropdown">
+                    <select class="ui search dropdown" name="places" [(ngModel)]="places">
                         <option value="">Places disponibles</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -43,8 +52,11 @@
                         <option value="4">4</option>
                     </select>
                 </div>
-                <button class="ui button large teal" type="submit">Itineraire</button>
-                <button class="ui button large teal" type="submit">Valider</button>
+                <div class="three ui buttons">
+                    <button class="ui button" type="submit" (click)="route()">Itineraire</button>
+                    <div class="or" data-text="ou"></div>
+                    <button class="ui button teal" type="submit" (click)="add()">Valider</button>
+                </div>
             </form>
         </div>
         <div class="column">
