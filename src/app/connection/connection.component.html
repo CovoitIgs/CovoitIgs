@@ -11,23 +11,23 @@
             <div class="field">
                 <div class="ui left icon input">
                     <i class="user icon"></i>
-                    <input type="text" name="email" placeholder="Adresse mail">
+                    <input type="text" name="email" placeholder="Adresse mail" [(ngModel)]="email">
                 </div>
             </div>
             <div class="field">
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input type="password" name="password" placeholder="Mot de passe">
+                    <input type="password" name="password" placeholder="Mot de passe" [(ngModel)]="password">
                 </div>
             </div>
             <div class="field">
                 <div class="ui checkbox">
-                    <input type="checkbox" tabindex="0" class="hidden">
+                    <input type="checkbox" name="rememberMe" [(ngModel)]="rememberMe">
                     <label>Se souvenir de moi</label>
                 </div>
             </div>
 
-            <div class="ui fluid large teal submit button">Se connecter</div>
+            <div class="ui fluid large teal submit button" (click)="connect()">Se connecter</div>
         </div>
 
         <div class="ui error message"></div>

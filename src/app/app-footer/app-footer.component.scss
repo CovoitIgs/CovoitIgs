@@ -1,9 +1,14 @@
-footer{
-    margin-top: 80px;
-    .icon:hover{
-        color:rgba(231, 76, 60,1.0) !important;
+@import '../../config';
+
+footer {
+    padding: 3rem 0;
+    background-color: $dark-background-color;
+
+    .icon:hover {
+        color: rgba(231, 76, 60,1.0) !important;
     }
-    #igsLogo{
+
+    #igsLogo {
         width: 100px;
     }
 }

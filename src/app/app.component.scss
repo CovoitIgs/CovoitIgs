@@ -1,4 +1,6 @@
+@import '../config';
+
 section#main {
-    position: relative;
-    top: 80px;
+    margin-top: 65px;
+    background-color: $main-background-color;
 }

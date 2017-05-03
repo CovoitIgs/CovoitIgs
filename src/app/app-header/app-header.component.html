@@ -1,20 +1,19 @@
 <header>
     <nav class="ui fixed menu borderless">
         <div class="ui container">
-            <a href="#" class="header item">
+            <a routerLink="/" class="header item">
                 <img class="logo" src="assets/images/logo.png">
             </a>
-            <a href="" class="item">Accueil</a>
-            <div class="ui simple dropdown item">
-                Trajets <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item" href="rides/add">Nouveau trajet</a>
-                    <a class="item" href="#">Mes trajets</a>
-                    <a class="item" href="#">Rechercher un trajet</a>
-                </div>
-            </div>
+            <a class="item" routerLink="#">Mes trajets</a>
+            <a class="item" routerLink="rides/add">Nouveau trajet</a>
             <div class="right menu">
-                <a href="connect" class="item">Se connecter</a>
+                <div class="item">
+                    <div class="ui icon input">
+                        <input type="text" placeholder="Chercher un trajet...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+                <a routerLink="connect" class="item">Se connecter</a>
                 <!--<span class="ui item">[Nom de la personne]</span>-->
             </div>
         </div>

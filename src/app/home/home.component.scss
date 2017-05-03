@@ -4,48 +4,46 @@ $fontColorIcon: #00796B;
 $colorH2WithBackground: White;
 $paddingBloc: 50px;
 
-
-#homeHead{
+#homeHead {
     padding: $paddingBloc;
     background-image: url("../../assets/images/toulouse.jpg");
-    margin-top:  -40px;
-    .grid{
+    margin-top: -20px;
+    color: white;
+    text-shadow: 0 0 60px rgba(0, 0, 0, .2);
+
+    .grid {
         display: table;
         position: relative;
         vertical-align: middle;
         width: 100%;
         height: 450px;
-        .sixteen{
+
+        .sixteen {
             display: table-cell;
             vertical-align: middle;
             text-align: center;
+
             h1 {
                 font-size: 4.5em;
             }
-            h3{
+            h3 {
                 font-size: 24px;
             }
         }
     }
 }
 
-#slogan{
+#service {
+    // background-color: $colorService;
     padding: $paddingBloc;
-}
 
-#service{
-    h2{
-        color:$colorH2WithBackground;
-    }
-    background-color: $colorService;
-    padding: $paddingBloc;
-    i{
+    i {
         background-color: $fontColorIcon !important;
     }
 }
 
-#contact{
-    background-color: $colorContact;
+#contact {
+    // background-color: $colorContact;
     padding: $paddingBloc;
 }
 
