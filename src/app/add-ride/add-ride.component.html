@@ -21,13 +21,13 @@
                     <input type="text" name="arrival" placeholder="Adresse d'arrivée" [(ngModel)]="arrival">
                 </div>
                 <div *ngIf="errorArrival" class="ui red message">
-                    Adresse d'arriver invalide
+                    Adresse d'arrivée invalide
                 </div>
                 <div class="field" [ngClass]="{ 'error': errorArrivalTime }">
                     <input type="text" name="arrivalTime" placeholder="Heure de d'arrivée" [(ngModel)]="arrivalTime">
                 </div>
                 <div *ngIf="errorArrivalTime" class="ui red message">
-                    Heure d'arriver invalide
+                    Heure d'arrivée invalide
                 </div>
                 <div class="field">
                     <input type="text" name="detour" placeholder="Détour possible (mètres)" [(ngModel)]="detour">

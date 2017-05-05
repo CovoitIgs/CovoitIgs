@@ -4,8 +4,8 @@
             <a routerLink="/" class="header item">
                 <img class="logo" src="assets/images/logo.png">
             </a>
-            <a class="item" routerLink="#">Mes trajets</a>
-            <a class="item" routerLink="rides/add">Nouveau trajet</a>
+            <a *ngIf="isAuthenticated" class="item" routerLink="#">Mes trajets</a>
+            <a *ngIf="isAuthenticated" class="item" routerLink="rides/add">Nouveau trajet</a>
             <div class="right menu">
                 <div class="item">
                     <div class="ui icon input">
@@ -13,8 +13,9 @@
                         <i class="search link icon"></i>
                     </div>
                 </div>
-                <a routerLink="connect" class="item">Se connecter</a>
-                <!--<span class="ui item">[Nom de la personne]</span>-->
+                <a *ngIf="!isAuthenticated" routerLink="connect" class="item">Se connecter</a>
+                <span *ngIf="isAuthenticated" class="ui item">{{ user.email }}</span>
+                <a *ngIf="isAuthenticated" class="item" (click)="logout()">Logout</a>
             </div>
         </div>
     </nav>

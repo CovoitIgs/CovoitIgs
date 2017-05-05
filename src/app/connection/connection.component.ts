@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+import { AuthenticationService } from '../services/authentication.service'
+import { User } from 'app/interfaces/user'
 
 @Component({
   selector: 'app-connection',
@@ -23,6 +25,13 @@ export class ConnectionComponent implements OnInit {
 
     connect() {
         if (this.validateCredentials()) {
+            const user: User = {
+                id: 0,
+                name: '[unknown]',
+                email: this.email
+            }
+
+            AuthenticationService.login(user)
             this.router.navigate(['/'])
         }
     }
