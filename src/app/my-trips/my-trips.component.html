@@ -1,0 +1,35 @@
+<div class="ui raised very padded text container">
+    <h2>Mes trajets à venir</h2>
+    <div class="ui items middle aligned divided list">
+        <div class="item" *ngFor="let trip of coming">
+            <div class="content">
+                <div class="right floated content">
+                    <div class="ui teal button">D&eacute;tails</div>
+                    <div class="ui red button">Cancel</div>
+                </div>
+                <a class="ui tiny header">{{ trip.departure }}<i class="long arrow right icon" style="margin: 0 .5rem"></i>{{ trip.arrival }}</a>
+                <div class="extra">
+                    {{ trip.departureTime | date:'d MMMM y, hh:mm' }} - {{ trip.arrivalTime | date:'hh:mm' }}
+                </div>
+                <div class="meta">
+                    <span>{{ trip.driver }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Mes trajets effectu&eacute;s</h2>
+    <div class="ui items middle aligned divided very relaxed list">
+        <div class="item ui raised very padded" *ngFor="let trip of past">
+            <div class="content">
+                <a class="ui tiny header">{{ trip.departure }}<i class="long arrow right icon" style="margin: 0 .5rem"></i>{{ trip.arrival }}</a>
+                <div class="extra">
+                    {{ trip.departureTime | date:'d MMMM y, hh:mm' }} - {{ trip.arrivalTime | date:'hh:mm' }}
+                </div>
+                <div class="meta">
+                    <span>{{ trip.driver }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
