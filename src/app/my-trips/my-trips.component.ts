@@ -10,12 +10,21 @@ export class MyTripsComponent implements OnInit {
 
     private past: Trip[]
     private coming: Trip[]
+    private trip: Trip
 
     constructor() { }
 
     ngOnInit() {
         this.past = this.mockTripsPast()
         this.coming = this.mockTripsComing()
+    }
+
+    backAll() {
+        this.trip = null
+    }
+
+    details(trip: Trip) {
+        this.trip = trip
     }
 
     mockTripsPast(): Trip[] {

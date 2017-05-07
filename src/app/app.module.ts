@@ -16,7 +16,8 @@ import { AddRideComponent } from './add-ride/add-ride.component'
 
 import { AgmCoreModule } from 'angular2-google-maps/core'
 import { ContactComponent } from './contact/contact.component'
-import { MyTripsComponent } from './my-trips/my-trips.component'
+import { MyTripsComponent } from './my-trips/my-trips.component';
+import { TripDetailsComponent } from './trip-details/trip-details.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MyTripsComponent } from './my-trips/my-trips.component'
     ConnectionComponent,
     AddRideComponent,
     ContactComponent,
-    MyTripsComponent
+    MyTripsComponent,
+    TripDetailsComponent
   ],
   imports: [
     BrowserModule,
