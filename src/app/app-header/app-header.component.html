@@ -14,8 +14,8 @@
                     </div>
                 </div>
                 <a *ngIf="!isAuthenticated" routerLink="connect" class="item">Se connecter</a>
-                <span *ngIf="isAuthenticated" class="ui item">{{ user.email }}</span>
-                <a *ngIf="isAuthenticated" class="item" (click)="logout()">Logout</a>
+                <span *ngIf="isAuthenticated" class="ui item">{{ user.name }}</span>
+                <a *ngIf="isAuthenticated" class="item" (click)="logout()">Se déconnecter</a>
             </div>
         </div>
     </nav>

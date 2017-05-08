@@ -21,7 +21,8 @@
                 <i class="big circular inverted car icon"></i>
                 <h3>Proposer un trajet</h3>
                 <p>Vous êtes conducteur ?<br>Proposer votre parcours</p>
-                <a href="rides/add" class="ui orange button">En savoir plus</a>
+                <a *ngIf="isAuthenticated" routerLink="rides/add" class="ui orange button">En savoir plus</a>
+                <a *ngIf="!isAuthenticated" routerLink="connect" class="ui orange button">En savoir plus</a>
             </div>
             <div class="column">
                 <i class="big circular inverted user icon"></i>

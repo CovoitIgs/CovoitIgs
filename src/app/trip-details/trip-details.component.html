@@ -1,8 +1,15 @@
-<div class="ui header">{{ trip.departure }}<i class="long arrow right icon" style="margin: 0 .5rem"></i>{{ trip.arrival }}</div>
-<div class="ui meta">
-    <i class="calendar outline icon"></i>{{ trip.departureTime | date:'d MMMM y, hh:mm' }} - {{ trip.arrivalTime | date:'hh:mm' }}
+<div class="ui stackable two column centered grid">
+    <div class="column">
+        <div class="ui header">{{ trip.departure }}<i class="long arrow right icon" style="margin: 0 .5rem"></i>{{ trip.arrival }}</div>
+        <div class="ui meta">
+            <i class="calendar outline icon"></i>{{ trip.departureTime | date:'d MMMM y, hh:mm' }} - {{ trip.arrivalTime | date:'hh:mm' }}
+        </div>
+        <div class="ui hidden divider"></div>
+        <p>Conducteur: {{ trip.driver }}</p>
+        <p>Places restantes :</p>
+        <p>Temps de trajet estimé :</p>
+    </div>
+    <div class="column">
+        <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]=11></sebm-google-map>
+    </div>
 </div>
-<div class="ui hidden divider"></div>
-<p>Conducteur: {{ trip.driver }}</p>
-<p>Places restantes :</p>
-<p>Temps de trajet estimé :</p>
