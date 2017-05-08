@@ -1,63 +1,67 @@
 <div class="ui hidden divider"></div>
-<div class="ui stackable three column centered grid">
-        <div class="column">
-            <h2>Proposer un trajet</h2>
-            <form class="ui form">
-                <div class="field" [ngClass]="{ 'error': errorDeparture }">
-                    <input type="text" name="departure" placeholder="Adresse de départ" [(ngModel)]="departure">
-                </div>
-                <div *ngIf="errorDeparture" class="ui red message">
-                    Adresse de départ invalide
-                </div>
-                <div class="field" [ngClass]="{ 'error': errorDepartureTime }">
-                    <input type="text" name="departureTime" placeholder="Heure de départ" [(ngModel)]="departureTime">
-                </div>
-                <div *ngIf="errorDepartureTime" class="ui red message">
-                    Heure de départ invalide
-                </div>
-                <div class="field" [ngClass]="{ 'error': errorArrival }">
-                    <input type="text" name="arrival" placeholder="Adresse d'arrivée" [(ngModel)]="arrival">
-                </div>
-                <div *ngIf="errorArrival" class="ui red message">
-                    Adresse d'arrivée invalide
-                </div>
-                <div class="field" [ngClass]="{ 'error': errorArrivalTime }">
-                    <input type="text" name="arrivalTime" placeholder="Heure de d'arrivée" [(ngModel)]="arrivalTime">
-                </div>
-                <div *ngIf="errorArrivalTime" class="ui red message">
-                    Heure d'arrivée invalide
-                </div>
-                <div class="field">
-                    <input type="text" name="detour" placeholder="Détour possible (mètres)" [(ngModel)]="detour">
-                </div>
-                <div class="field">
-                    <select class="ui search dropdown" name="recurrence" [(ngModel)]="recurrence">
-                        <option value="">Récurrence</option>
-                        <option value="week">Tous les jours de la semaine</option>
-                        <option value="monday">Tous les lundi</option>
-                        <option value="tuesday">Tous les mardi</option>
-                        <option value="wednesday">Tous les mercredi</option>
-                        <option value="thursday">Tous les jeudi</option>
-                        <option value="friday">Tous les vendredi</option>
-                    </select>
-                </div>
-                <div class="field">
-                    <select class="ui search dropdown" name="places" [(ngModel)]="places">
-                        <option value="">Places disponibles</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select>
-                </div>
-                <div class="three ui buttons">
-                    <button class="ui button" type="submit" (click)="route()">Itineraire</button>
-                    <div class="or" data-text="ou"></div>
-                    <button class="ui button teal" type="submit" (click)="add()">Valider</button>
-                </div>
-            </form>
+<div class="ui raised very padded text container">
+    <div class="ui stacked segment">
+        <div class="ui stackable two column centered grid">
+            <div class="column">
+                <h2>Proposer un trajet</h2>
+                <form class="ui form">
+                    <div class="field" [ngClass]="{ 'error': errorDeparture }">
+                        <input type="text" name="departure" placeholder="Adresse de départ" [(ngModel)]="departure">
+                    </div>
+                    <div *ngIf="errorDeparture" class="ui red message">
+                        Adresse de départ invalide
+                    </div>
+                    <div class="field" [ngClass]="{ 'error': errorDepartureTime }">
+                        <input type="text" name="departureTime" placeholder="Heure de départ" [(ngModel)]="departureTime">
+                    </div>
+                    <div *ngIf="errorDepartureTime" class="ui red message">
+                        Heure de départ invalide
+                    </div>
+                    <div class="field" [ngClass]="{ 'error': errorArrival }">
+                        <input type="text" name="arrival" placeholder="Adresse d'arrivée" [(ngModel)]="arrival">
+                    </div>
+                    <div *ngIf="errorArrival" class="ui red message">
+                        Adresse d'arrivée invalide
+                    </div>
+                    <div class="field" [ngClass]="{ 'error': errorArrivalTime }">
+                        <input type="text" name="arrivalTime" placeholder="Heure de d'arrivée" [(ngModel)]="arrivalTime">
+                    </div>
+                    <div *ngIf="errorArrivalTime" class="ui red message">
+                        Heure d'arrivée invalide
+                    </div>
+                    <div class="field">
+                        <input type="text" name="detour" placeholder="Détour possible (mètres)" [(ngModel)]="detour">
+                    </div>
+                    <div class="field">
+                        <select class="ui search dropdown" name="recurrence" [(ngModel)]="recurrence">
+                            <option value="">Récurrence</option>
+                            <option value="week">Tous les jours de la semaine</option>
+                            <option value="monday">Tous les lundi</option>
+                            <option value="tuesday">Tous les mardi</option>
+                            <option value="wednesday">Tous les mercredi</option>
+                            <option value="thursday">Tous les jeudi</option>
+                            <option value="friday">Tous les vendredi</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <select class="ui search dropdown" name="places" [(ngModel)]="places">
+                            <option value="">Places disponibles</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                    <div class="three ui buttons">
+                        <button class="ui button" type="submit" (click)="route()">Itineraire</button>
+                        <div class="or" data-text="ou"></div>
+                        <button class="ui button teal" type="submit" (click)="add()">Valider</button>
+                    </div>
+                </form>
+            </div>
+            <div class="column">
+                <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]=11></sebm-google-map>
+            </div>
         </div>
-        <div class="column">
-            <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]=11></sebm-google-map>
-        </div>
+    </div>
 </div>
