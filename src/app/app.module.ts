@@ -11,12 +11,13 @@ import { AppHeaderComponent } from './app-header/app-header.component'
 import { AppFooterComponent } from './app-footer/app-footer.component'
 import { UserService } from './services/user.service'
 import { AuthenticationService } from './services/authentication.service'
+import { TripService } from './services/trip.service'
 import { ConnectionComponent } from './connection/connection.component'
 import { AddRideComponent } from './add-ride/add-ride.component'
 
 import { AgmCoreModule } from 'angular2-google-maps/core'
 import { ContactComponent } from './contact/contact.component'
-import { MyTripsComponent } from './my-trips/my-trips.component';
+import { MyTripsComponent } from './my-trips/my-trips.component'
 import { TripDetailsComponent } from './trip-details/trip-details.component'
 
 @NgModule({
@@ -42,7 +43,8 @@ import { TripDetailsComponent } from './trip-details/trip-details.component'
   ],
   providers: [
       UserService,
-      AuthenticationService
+      AuthenticationService,
+      TripService
   ],
   bootstrap: [AppComponent]
 })

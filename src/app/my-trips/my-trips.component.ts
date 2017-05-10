@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Trip } from 'app/interfaces/trip'
+import { TripService } from 'app/services/trip.service'
 
 @Component({
   selector: 'app-my-trips',
@@ -8,15 +9,15 @@ import { Trip } from 'app/interfaces/trip'
 })
 export class MyTripsComponent implements OnInit {
 
-    private past: Trip[]
+    private completed: Trip[]
     private coming: Trip[]
     private trip: Trip
 
-    constructor() { }
+    constructor(private tripService: TripService) { }
 
     ngOnInit() {
-        this.past = this.mockTripsPast()
-        this.coming = this.mockTripsComing()
+        this.completed = this.tripService.allCompleted()
+        this.coming = this.tripService.allComing()
     }
 
     backAll() {
@@ -27,46 +28,13 @@ export class MyTripsComponent implements OnInit {
         this.trip = trip
     }
 
-    mockTripsPast(): Trip[] {
-        return [
-            {
-                id: 1,
-                departure: 'Balma',
-                departureTime: new Date(),
-                arrival: 'Blagnac',
-                arrivalTime: new Date(),
-                driver: 'Quentin Pomarel'
-            },
-            {
-                id: 1,
-                departure: 'Labège',
-                departureTime: new Date(),
-                arrival: 'Blagnac',
-                arrivalTime: new Date(),
-                driver: 'Robin Dauly'
-            },
-            {
-                id: 1,
-                departure: 'Saint-Cyprien',
-                departureTime: new Date(),
-                arrival: 'Blagnac',
-                arrivalTime: new Date(),
-                driver: 'Quentin Pomarel'
-            }
-        ]
-    }
+    cancel(trip: Trip, event: Event, backAll?: boolean) {
+        event.stopPropagation()
+        this.coming = this.tripService.filter(trip, this.coming)
 
-    mockTripsComing(): Trip[] {
-        return [
-            {
-                id: 1,
-                departure: 'La Roseraie',
-                departureTime: new Date(),
-                arrival: 'Blagnac',
-                arrivalTime: new Date(),
-                driver: 'Julien Sergent'
-            }
-        ]
+        if (backAll) {
+            this.backAll()
+        }
     }
 
 }
