@@ -12,6 +12,7 @@ export class AppHeaderComponent implements OnInit, DoCheck {
 
     isAuthenticated: boolean
     private user: User
+    private searchTerm: string
 
     constructor(private router: Router) { }
 
@@ -27,6 +28,12 @@ export class AppHeaderComponent implements OnInit, DoCheck {
     logout() {
         AuthenticationService.logout()
         this.router.navigate(['/'])
+    }
+
+    search() {
+        if (this.searchTerm.length > 0) {
+            this.router.navigate(['search', this.searchTerm])
+        }
     }
 
 }

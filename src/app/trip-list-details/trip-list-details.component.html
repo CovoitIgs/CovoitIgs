@@ -1,0 +1,7 @@
+<a class="ui tiny header">{{ trip.departure }}<i class="long arrow right icon" style="margin: 0 .5rem"></i>{{ trip.arrival }}</a>
+<div class="extra">
+    <i class="calendar outline icon"></i>{{ trip.departureTime | date:'d MMMM y, hh:mm' }} - {{ trip.arrivalTime | date:'hh:mm' }}
+</div>
+<div class="meta">
+    <span>{{ trip.driver }}</span>
+</div>

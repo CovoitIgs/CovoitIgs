@@ -1,0 +1,32 @@
+<div class="ui hidden divider"></div>
+<div class="ui raised very padded text container">
+    <div class="ui stacked segment">
+        <div *ngIf="!trip; else tripDetails">
+            <h2>Recherche : {{ term }}</h2>
+            <div *ngIf="trips.length > 0; else noTripsFound">
+                <div class="ui items middle aligned divided list">
+                    <div class="item clickable" *ngFor="let trip of trips" (click)="details(trip)">
+                        <div class="content">
+                            <app-trip-list-details [trip]="trip"></app-trip-list-details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-template #noTripsFound>
+                <div class="ui message">
+                    <p>
+                        Aucun trajet ne correspond &agrave; votre recherche.
+                    </p>
+                </div>
+            </ng-template>
+        </div>
+        <ng-template #tripDetails>
+            <a (click)="backAll()" class="clickable"><i class="angle left icon"></i>Mes trajets</a>
+            <div class="ui hidden divider"></div>
+            <app-trip-details [trip]="trip"></app-trip-details>
+            <div>
+                <button class="ui teal button" (click)="book(trip)">R&eacute;server</button>
+            </div>
+        </ng-template>
+    </div>
+</div>

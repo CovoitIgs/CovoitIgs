@@ -9,8 +9,8 @@
             <div class="right menu">
                 <div class="item">
                     <div class="ui icon input">
-                        <input type="text" placeholder="Chercher un trajet...">
-                        <i class="search link icon"></i>
+                        <input type="text" placeholder="Chercher un trajet..." (keyup.enter)="search()" [(ngModel)]="searchTerm">
+                        <i class="search link icon" (click)="search()"></i>
                     </div>
                 </div>
                 <a *ngIf="!isAuthenticated" routerLink="connect" class="item">Se connecter</a>

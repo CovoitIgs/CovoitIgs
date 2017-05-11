@@ -18,7 +18,9 @@ import { AddRideComponent } from './add-ride/add-ride.component'
 import { AgmCoreModule } from 'angular2-google-maps/core'
 import { ContactComponent } from './contact/contact.component'
 import { MyTripsComponent } from './my-trips/my-trips.component'
-import { TripDetailsComponent } from './trip-details/trip-details.component'
+import { TripDetailsComponent } from './trip-details/trip-details.component';
+import { TripSearchComponent } from './trip-search/trip-search.component';
+import { TripListDetailsComponent } from './trip-list-details/trip-list-details.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { TripDetailsComponent } from './trip-details/trip-details.component'
     AddRideComponent,
     ContactComponent,
     MyTripsComponent,
-    TripDetailsComponent
+    TripDetailsComponent,
+    TripSearchComponent,
+    TripListDetailsComponent
   ],
   imports: [
     BrowserModule,

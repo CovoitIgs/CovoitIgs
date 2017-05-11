@@ -8,6 +8,37 @@ export class TripService {
         return []
     }
 
+    allForSearch(term) {
+        const all = [
+            {
+                id: 1,
+                departure: 'Balma',
+                departureTime: new Date(),
+                arrival: 'Blagnac',
+                arrivalTime: new Date(),
+                driver: 'Quentin Pomarel'
+            },
+            {
+                id: 1,
+                departure: 'Labège',
+                departureTime: new Date(),
+                arrival: 'Blagnac',
+                arrivalTime: new Date(),
+                driver: 'Robin Dauly'
+            },
+            {
+                id: 1,
+                departure: 'Saint-Cyprien',
+                departureTime: new Date(),
+                arrival: 'Blagnac',
+                arrivalTime: new Date(),
+                driver: 'Quentin Pomarel'
+            }
+        ]
+
+        return all
+    }
+
     allCompleted(): Trip[] {
         return [
             {
