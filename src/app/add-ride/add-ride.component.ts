@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core'
 
+declare var google: any
+
 @Component({
   selector: 'app-add-ride',
   templateUrl: './add-ride.component.html',
   styleUrls: ['./add-ride.component.scss']
 })
 export class AddRideComponent implements OnInit {
-    private lat = 43.600531
-    private lng = 1.440456
+    private latDefault = 43.600531
+    private lngDefault = 1.440456
     private departure = ''
     private departureTime = ''
     private arrival = ''
@@ -20,17 +22,46 @@ export class AddRideComponent implements OnInit {
     private errorArrival = false
     private errorArrivalTime = false
 
+    private directionsService = new google.maps.DirectionsService()
+    private directionsDisplay = new google.maps.DirectionsRenderer()
+    // ngOnInit() {
+    //     if (navigator.geolocation) {
+    //         navigator.geolocation.getCurrentPosition(position => {
+    //             this.lat = position.coords.latitude
+    //             this.lng = position.coords.longitude
+    //         })
+    //     }
+    // }
+
     ngOnInit() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
-                this.lat = position.coords.latitude
-                this.lng = position.coords.longitude
+
+
+        const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 7,
+            center: {lat: this.latDefault, lng: this.lngDefault}
             })
-        }
+            this.directionsDisplay.setMap(map)
+        //
+
+    }
+
+  private calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
+        directionsService.route({
+            origin: {lat: 43.840098, lng: 1.389654},
+            destination: {lat: 43.643841, lng: 1.386883},
+            travelMode: 'DRIVING'
+        }, function(response, status) {
+            if (status === 'OK') {
+                directionsDisplay.setDirections(response)
+            } else {
+                window.alert('Directions request failed due to ' + status)
+            }
+        })
     }
 
     route() {
-
+        this.calculateAndDisplayRoute(this.directionsService, this.directionsDisplay)
     }
 
     add() {
